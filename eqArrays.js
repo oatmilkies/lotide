@@ -16,7 +16,7 @@ const eqArrays = function(arr1, arr2) {
     return false;
   } else //Compare each element of the arrays
     for (i = 0; i < arr1.length; i++) {
-      if (!assertEqual(arr1[i], arr2[i])) {
+      if (arr1[i] !== arr2[i]) {
         return false;
       }
     }
