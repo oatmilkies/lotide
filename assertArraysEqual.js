@@ -2,21 +2,28 @@
 const eqArrays = function(arr1, arr2) {
   //Check both arrays are the same length
   if (arr1.length !== arr2.length) {
-    return console.log("Arrays are not equal");
+    return false;
   } else //Compare each element of the arrays
     for (let i = 0; i < arr1.length; i++) {
       if (arr1[i] !== arr2[i]) {
-        return console.log("Arrays are not equal");
+        return false;
       }
     }
-  return console.log("Arrays are equal");
+  return true;
+};
+
+const assertArraysEqual = function(arr1, arr2) {
+  if (eqArrays(arr1, arr2)) {
+    console.log("Arrays are equal");
+  } else
+    console.log("Arrays are not equal");
 };
 
 //Test cases
-eqArrays([1, 2, 3], [1, 2]), true;
+assertArraysEqual([1, 2, 3], [1, 2]);
 
-eqArrays([1, 2, 3], [1, 2, 3]), true;
-eqArrays([1, 5, 3], [1, 2, 3]), true;
+assertArraysEqual([1, 2, 3], [1, 2, 3]);
+assertArraysEqual([1, 5, 3], [1, 2, 3]);
 
-eqArrays(["a", "b", "c"], ["a", "b", "c"]), true;
-eqArrays(["a", "b", "g"], ["a", "b", "c"]), true;
+assertArraysEqual(["a", "b", "c"], ["a", "b", "c"]);
+assertArraysEqual(["a", "b", "c"], ["a", "d", "c"]);
