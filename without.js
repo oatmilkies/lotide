@@ -23,7 +23,7 @@ const assertArraysEqual = function(arr1, arr2) {
 //Create new array without unwanted elements
 const without = function(orig, remove) {
   let newArray = [];
-  
+
   //Find elements that match in both arrays
   for (let i = 0; i < orig.length; i++) {
     let match = false;
@@ -37,7 +37,6 @@ const without = function(orig, remove) {
     if (match === false) {
       newArray.push(orig[i]);
     }
-    
   }
 
   return newArray;
