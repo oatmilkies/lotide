@@ -25,17 +25,21 @@ const without = function(orig, remove) {
   let newArray = [];
 
   for (let i = 0; i < orig.length; i++) {
-    if (orig[i] !== remove[i]) {
-      newArray += orig[i];
+    for (let j = 0; j < remove.length; j++) {
+      if ((orig[i] !== remove[j]) && (j === remove.length - 1)) {
+        newArray.push(orig[i]);
+      }
     }
   }
-
+  console.log(newArray);
   return newArray;
 };
+
 
 //Test cases
 without([1, 2, 3], [1]); // => [2, 3]
 without(["1", "2", "3"], [1, 2, "3"]); // => ["1", "2"]
+without([1, 2, 3], [2]);
 
 const words = ["hello", "world", "lighthouse"];
 without(words, ["lighthouse"]); // no need to capture return value for this test case
