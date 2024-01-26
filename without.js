@@ -23,13 +23,20 @@ const assertArraysEqual = function(arr1, arr2) {
 //Create new array without unwanted elements
 const without = function(orig, remove) {
   let newArray = [];
+  
 
   for (let i = 0; i < orig.length; i++) {
+    let match = false;
+
     for (let j = 0; j < remove.length; j++) {
-      if ((orig[i] !== remove[j]) && (j === remove.length - 1)) {
-        newArray.push(orig[i]);
+      if (orig[i] === remove[j]) {
+        match = true;
       }
     }
+    if (match === false) {
+      newArray.push(orig[i]);
+    }
+    
   }
   console.log(newArray);
   return newArray;
@@ -39,7 +46,7 @@ const without = function(orig, remove) {
 //Test cases
 without([1, 2, 3], [1]); // => [2, 3]
 without(["1", "2", "3"], [1, 2, "3"]); // => ["1", "2"]
-without([1, 2, 3], [2]);
+without([1, 2, 3], [2, 5]);
 
 const words = ["hello", "world", "lighthouse"];
 without(words, ["lighthouse"]); // no need to capture return value for this test case
