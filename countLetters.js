@@ -25,5 +25,10 @@ const countLetters = function(sentence) {
 };
 
 // Tests
-console.log(countLetters("lighthouse in the house"));
-console.log(countLetters("blue green 9 red 10"));
+const test1 = countLetters("lighthouse in the house 5");
+
+console.log(test1);
+
+assertEqual(test1["h"], 4);
+assertEqual(test1["l"], 1);
+assertEqual(test1["5"], undefined);
