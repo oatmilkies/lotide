@@ -17,6 +17,7 @@ const findKeyByValue = function(obj, value) {
       foundKey = key;
     } else {
       foundKey = undefined;
+      break;
     }
   }
 
