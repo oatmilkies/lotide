@@ -14,22 +14,19 @@ const eqArrays = function(arr1, arr2) {
   //Check both arrays are the same length
   if (arr1.length !== arr2.length) {
     return false;
-  } else //Compare each element of the arrays
+  } else {
     for (let i = 0; i < arr1.length; i++) {
       if (arr1[i] !== arr2[i]) {
         return false;
       }
     }
-  return true;
+    return true;
+  }
 };
 
 //Test cases
-assertEqual(eqArrays([1, 2, 3], [1, 2]), true);
-
 assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true);
-assertEqual(eqArrays([1, 5, 3], [1, 2, 3]), true);
 assertEqual(eqArrays([1, 5, 3], [1, 2, 3]), false);
 
 assertEqual(eqArrays(["a", "b", "c"], ["a", "b", "c"]), true);
-assertEqual(eqArrays(["a", "b", "g"], ["a", "b", "c"]), true);
 assertEqual(eqArrays(["a", "b", "g"], ["a", "b", "c"]), false);
