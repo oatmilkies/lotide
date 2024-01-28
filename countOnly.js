@@ -1,5 +1,4 @@
 // Function will be given an array and an object. It will return an object containing counts of everything that the input object listed.
-//Compare 2 things and print if they match or not
 const assertEqual = function(actual, expected) {
   if (actual === expected) {
     console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
@@ -8,8 +7,7 @@ const assertEqual = function(actual, expected) {
   }
 };
 
-// allItems: an array of strings that we need to look through
-// itemsToCount: an object specifying what to count
+
 const countOnly = function(allItems, itemsToCount) {
   //Create new object to store the count of each first name
   const results = {};
