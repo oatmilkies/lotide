@@ -11,8 +11,6 @@ const assertEqual = function(actual, expected) {
 const countOnly = function(allItems, itemsToCount) {
   //Create new object to store the count of each first name
   const results = {};
-
-
   //Only add the names in the argument object
   for (const item of allItems) {
     if (itemsToCount[item]) {
