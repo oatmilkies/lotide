@@ -10,14 +10,11 @@ const assertEqual = function(actual, expected) {
 
 //Search for a given value in the object and return its key
 const findKeyByValue = function(obj, value) {
-  let foundKey = "";
+  let foundKey = undefined;
 
   for (const key in obj) {
     if (obj[key] === value) {
       foundKey = key;
-    } else {
-      foundKey = undefined;
-      break;
     }
   }
 
@@ -30,5 +27,5 @@ test = {};
 
 assertEqual(findKeyByValue(food, "chicken"), "meat");
 assertEqual(findKeyByValue(food, "onion"), "vegetable");
-assertEqual(findKeyByValue(test, "banana"), "");
+assertEqual(findKeyByValue(test, "banana"), undefined);
 assertEqual(findKeyByValue(food, "yum"), undefined);
