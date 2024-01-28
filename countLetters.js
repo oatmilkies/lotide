@@ -26,9 +26,14 @@ const countLetters = function(sentence) {
 
 // Tests
 const test1 = countLetters("lighthouse in the house 5");
+const test2 = countLetters("ABCBAa");
+const test3 = countLetters("");
 
 console.log(test1);
 
 assertEqual(test1["h"], 4);
 assertEqual(test1["l"], 1);
 assertEqual(test1["5"], undefined);
+assertEqual(test2["a"], 1);
+assertEqual(test2["A"], 2);
+assertEqual(Object.keys(test3).length, 0);
