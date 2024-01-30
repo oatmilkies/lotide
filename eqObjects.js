@@ -30,10 +30,13 @@ const eqObjects = function(obj1, obj2) {
   }
 
   for (const key in obj1) {
+    //Check if the value is an array and compare them
     if (Array.isArray(obj1[key])) {
-      eqArrays(obj1[key], obj2[key]);
+      if (!eqArrays(obj1[key], obj2[key])) {
+        return false;
+      }
     } else {
-
+      //Compare primitive data type values
       if (obj1[key] !== obj2[key]) {
         return false;
       }
@@ -49,8 +52,10 @@ const fruit3 = { type: "banana", colour: "brown" };
 const fruit4 = { colour: "yellow", typeo: "lemon" };
 const fruit5 = { type: "banana", colour: ["yellow", "brown"] };
 const fruit6 = { colour: ["yellow", "brown"], type: "banana" };
+const fruit7 = { type: "banana", colour: ["yellow", "green"] };
 
 assertEqual(eqObjects(fruit1, fruit2), true);
 assertEqual(eqObjects(fruit2, fruit3), false);
 assertEqual(eqObjects(fruit1, fruit4), false);
 assertEqual(eqObjects(fruit5, fruit6), true);
+assertEqual(eqObjects(fruit5, fruit7), false);
