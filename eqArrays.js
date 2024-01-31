@@ -14,14 +14,14 @@ const eqArrays = function(arr1, arr2) {
   //Check both arrays are the same length
   if (arr1.length !== arr2.length) {
     return false;
-  } else {
-    for (let i = 0; i < arr1.length; i++) {
-      if (arr1[i] !== arr2[i]) {
-        return false;
-      }
-    }
-    return true;
   }
+  //Compare each element
+  for (let i = 0; i < arr1.length; i++) {
+    if (arr1[i] !== arr2[i]) {
+      return false;
+    }
+  }
+  return true;
 };
 
 //Test cases
