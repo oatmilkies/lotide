@@ -37,5 +37,5 @@ console.log(results1);
 
 // Tests
 assertArraysEqual(results1, [ 'O', 'T', 'D', 'J', 'C' ]);
-assertArraysEqual(results1[0], "O");
-assertArraysEqual(results1[2], "D");
+assertArraysEqual([results1[0]], ["O"]);
+assertArraysEqual([results1[2]], ["D"]);
