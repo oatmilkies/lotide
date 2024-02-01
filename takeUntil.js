@@ -24,13 +24,14 @@ const assertArraysEqual = function(arr1, arr2) {
 
 //Print out the elements of an array until the callback function requirements are true
 const takeUntil = function(array, callback) {
-  let result = [];
+  result = [];
   //Loop through each element in the array until callback condition is met
   for (const element of array) {
-    if (!callback(element)) {
+    //Store the result of the callback in a variable and use that in conditions
+    const callbackResult = callback(element);
+    if (!callbackResult) {
       result.push(element);
-    }
-    if (callback(element)) {
+    } else {
       return result;
     }
   }
