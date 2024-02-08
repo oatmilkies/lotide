@@ -34,7 +34,7 @@ const eqObjects = function(obj1, obj2) {
         return false;
       }
       //Call function again if key value is an object, then compare values
-    } else if (obj1[key].constructor.name === "Object") {
+    } else if (typeof obj1[key] === "object" && !Array.isArray(obj1[key])) {
       if (!eqObjects(obj1[key], obj2[key])) {
         return false;
       }
