@@ -28,7 +28,6 @@ const eqObjects = function(obj1, obj2) {
   }
 
   for (const key in obj1) {
- 
     //Check if the value is an array and compare the arrays
     if (Array.isArray(obj1[key])) {
       if (!eqArrays(obj1[key], obj2[key])) {
@@ -39,8 +38,7 @@ const eqObjects = function(obj1, obj2) {
       if (!eqObjects(obj1[key], obj2[key])) {
         return false;
       }
-    }
-    else {
+    } else {
       //Compare object values
       if (obj1[key] !== obj2[key]) {
         return false;
