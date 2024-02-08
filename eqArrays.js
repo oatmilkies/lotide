@@ -2,10 +2,8 @@
 const assertEqual = function(actual, expected) {
   if (actual === expected) {
     console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
-    return true;
   } else {
     console.log(`❌❌❌ Assertion Failed: ${actual} !== ${expected}`);
-    return false;
   }
 };
 
@@ -18,7 +16,7 @@ const eqArrays = function(arr1, arr2) {
   //Compare each element
   for (let i = 0; i < arr1.length; i++) {
     //If element is an array, call function and compare again
-    if (Array.isArray(arr1[i])) {
+    if (Array.isArray(arr1[i]) && Array.isArray(arr2[i])) {
       if (!eqArrays(arr1[i], arr2[i])) {
         return false;
       }
