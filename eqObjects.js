@@ -38,11 +38,9 @@ const eqObjects = function(obj1, obj2) {
       if (!eqObjects(obj1[key], obj2[key])) {
         return false;
       }
-    } else {
       //Compare object values
-      if (obj1[key] !== obj2[key]) {
-        return false;
-      }
+    } else if (obj1[key] !== obj2[key]) {
+      return false;
     }
   }
 
@@ -51,7 +49,6 @@ const eqObjects = function(obj1, obj2) {
 };
 
 // Tests
-
 const fruit1 = { colour: "yellow", type: "banana" };
 const fruit2 = { type: "banana", colour: "yellow" };
 const fruit3 = { type: "banana", colour: "brown" };
@@ -59,7 +56,6 @@ const fruit4 = { colour: "yellow", typeo: "lemon" };
 const fruit5 = { type: "banana", colour: ["yellow", "brown"] };
 const fruit6 = { colour: ["yellow", "brown"], type: "banana" };
 const fruit7 = { type: "banana", colour: ["yellow", "green"] };
-
 
 assertEqual(eqObjects(fruit1, fruit2), true);
 assertEqual(eqObjects(fruit2, fruit3), false);
