@@ -28,22 +28,32 @@ const eqObjects = function(obj1, obj2) {
   }
 
   for (const key in obj1) {
-    //Check if the value is an array and compare them
+ 
+    //Check if the value is an array and compare the arrays
     if (Array.isArray(obj1[key])) {
       if (!eqArrays(obj1[key], obj2[key])) {
         return false;
       }
-    } else {
-      //Compare primitive data type values
+      //Call function again if key value is an object, then compare values
+    } else if (obj1[key].constructor.name === "Object") {
+      if (!eqObjects(obj1[key], obj2[key])) {
+        return false;
+      }
+    }
+    else {
+      //Compare object values
       if (obj1[key] !== obj2[key]) {
         return false;
       }
     }
   }
+
   return true;
+
 };
 
 // Tests
+
 const fruit1 = { colour: "yellow", type: "banana" };
 const fruit2 = { type: "banana", colour: "yellow" };
 const fruit3 = { type: "banana", colour: "brown" };
@@ -52,8 +62,14 @@ const fruit5 = { type: "banana", colour: ["yellow", "brown"] };
 const fruit6 = { colour: ["yellow", "brown"], type: "banana" };
 const fruit7 = { type: "banana", colour: ["yellow", "green"] };
 
+
 assertEqual(eqObjects(fruit1, fruit2), true);
 assertEqual(eqObjects(fruit2, fruit3), false);
 assertEqual(eqObjects(fruit1, fruit4), false);
 assertEqual(eqObjects(fruit5, fruit6), true);
 assertEqual(eqObjects(fruit5, fruit7), false);
+
+
+console.log(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 })); //true
+console.log(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 })); //f
+console.log(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 })); //f
