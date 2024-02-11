@@ -1,21 +1,19 @@
-// test/assertEqualTest.js & tail.js
-
-const assertEqual = require('../assertEqual');
 const tail = require('../tail');
+const assert = require('chai').assert;
 
-// TEST CASES
-const check = ["blue", "yellow", "green"];
-tail(check);
-assertEqual(check.length, 3); //original array shouldn't be modified
+//Testing if the function correctly returns every element but the first element in the array
+describe("#tail", () => {
 
-const words = tail(["Yo Yo", "Lighthouse", "Labs"]);
-assertEqual(words.length, 2);
-assertEqual(words[0], "Lighthouse");
-assertEqual(words[1], "Labs");
+  it("returns [2, 3] for [1, 2, 3]", () => {
+    assert.strictEqual(tail([1, 2, 3]), [2, 3]);
+  });
 
-const numbers = tail([1, 2, 3, 4]);
-assertEqual(numbers.length, 3);
-assertEqual(numbers[0], 2);
-assertEqual(numbers[1], 3);
-assertEqual(numbers[2], 4);
-assertEqual(numbers[0], 5);
+  it("returns ['yellow', 'green'] for ['blue', 'yellow', 'green']", () => {
+    assert.strictEqual(tail(['blue', 'yellow', 'green']), ['yellow', 'green']);
+  });
+
+  it("returns undefined for []", () => {
+    assert.strictEqual(tail([]), undefined);
+  });
+
+});
