@@ -1,7 +1,6 @@
-// test/assertEqualTest.js & head.js
-
-const head = require('../head');
 const assert = require('chai').assert;
+const head = require('../head');
+
 
 //Testing if the function correctly returns the first element in the array
 describe("#head", () => {
@@ -14,7 +13,7 @@ describe("#head", () => {
     assert.strictEqual(head(['5']), '5');
   });
 
-  it("returns 'Hello' for [''Hello', 'Lighthouse', 'Labs']", () => {
+  it("returns 'Hello' for ['Hello', 'Lighthouse', 'Labs']", () => {
     assert.strictEqual(head(['Hello', 'Lighthouse', 'Labs']), 'Hello');
   });
 
