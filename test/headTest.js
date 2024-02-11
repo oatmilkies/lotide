@@ -3,6 +3,7 @@
 const head = require('../head');
 const assert = require('chai').assert;
 
+//Testing if the function correctly returns the first element in the array
 describe("#head", () => {
 
   it("returns 1 for [1, 2, 3]", () => {
