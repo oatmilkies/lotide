@@ -1,6 +1,5 @@
 // test/assertEqualTest.js & head.js
 
-const assertEqual = require('../assertEqual');
 const head = require('../head');
 const assert = require('chai').assert;
 
