@@ -1,5 +1,11 @@
 //Compare 2 arrays
 const eqArrays = function(arr1, arr2) {
+
+  //Check if the arguments are arrays
+  if (!Array.isArray(arr1) || !Array.isArray(arr2)) {
+    return false;
+  }
+
   //Check both arrays are the same length
   if (arr1.length !== arr2.length) {
     return false;
