@@ -1,18 +1,3 @@
-//Compare 2 arrays
-const eqArrays = function(arr1, arr2) {
-  //Check both arrays are the same length
-  if (arr1.length !== arr2.length) {
-    return false;
-  } else {
-    for (let i = 0; i < arr1.length; i++) {
-      if (arr1[i] !== arr2[i]) {
-        return false;
-      }
-    }
-    return true;
-  }
-};
-
 //Output to console if arrays are equal or not
 const assertArraysEqual = function(arr1, arr2) {
   if (eqArrays(arr1, arr2)) {
@@ -43,9 +28,4 @@ const flatten = function(multiArr) {
   return newArray;
 };
 
-//Test cases
-flatten([1, 2, [3, 4], 5, [6]]); // => [1, 2, 3, 4, 5, 6]
-flatten(["a", 2, ["b", "c"], 5]);
-
-assertArraysEqual(flatten(["a", 2, ["b", "c"], 5]), ["a", 2, "b", "c", 5]);
-assertArraysEqual(flatten([1, 2, [3, 4], 5, [6]]), [1, 2, 3, 4, 5, 6]);
+module.exports = flatten;
