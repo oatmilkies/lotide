@@ -1,6 +1,5 @@
-// Returns the tail of an array
+// Returns the every element but the first element in an array
 const tail = function(arrayTail) {
-
   return arrayTail.slice(1);
 };
 
