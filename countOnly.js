@@ -1,4 +1,4 @@
-//Rreturns an object containing counts of everything that the input object listed
+//Returns an object containing counts of everything that the input object listed
 const countOnly = function(allItems, itemsToCount) {
   //Create new object to store the count of each first name
   const results = {};
