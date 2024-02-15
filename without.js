@@ -28,6 +28,7 @@ const without = function(orig, remove) {
   for (let i = 0; i < orig.length; i++) {
     let match = false;
 
+    //Don't do anything if a match is found
     for (let j = 0; j < remove.length; j++) {
       if (orig[i] === remove[j]) {
         match = true;
@@ -41,6 +42,8 @@ const without = function(orig, remove) {
 
   return newArray;
 };
+
+module.exports = without;
 
 
 //Test cases
