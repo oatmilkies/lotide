@@ -9,11 +9,14 @@ const assertEqual = function(actual, expected) {
 //Returns the first key for which the callback returns truthy. If nothing, returns undefined
 const findKey = function(object, callback) {
   for (const key in object) {
+    //If callback returns true, return the key
     if (callback(object[key])) {
       return key;
     }
   }
 };
+
+module.exports = findKey;
 
 const data1 = {
   monstera: { light: "medium light" },
