@@ -1,4 +1,4 @@
-//Returns the fist item in an array
+//Returns the first element in an array
 const head = function(arrayHead) {
   return arrayHead[0];
 };
