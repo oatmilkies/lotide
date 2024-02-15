@@ -23,19 +23,25 @@ const assertArraysEqual = function(arr1, arr2) {
 };
 
 const words = ["Ori", "Tunic", "Death's Door", "Jusant", "Citizen Sleeper"];
+
 //Return the first letter of each word in an array
 const map = function(array, callback) {
   const results = [];
+
+  //Add each first letter to the new array
   for (let item of array) {
     results.push(callback(item));
   }
   return results;
 };
 
+module.exports = map;
+
+//Call map function and pass in function that gets the first letter in a word
 const results1 = map(words, word => word[0]);
-console.log(results1);
 
 // Tests
+console.log(results1);
 assertArraysEqual(results1, [ 'O', 'T', 'D', 'J', 'C' ]);
 assertArraysEqual([results1[0]], ["O"]);
 assertArraysEqual([results1[2]], ["D"]);
