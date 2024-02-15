@@ -29,14 +29,18 @@ const takeUntil = function(array, callback) {
   for (const element of array) {
     //Store the result of the callback in a variable and use that in conditions
     const callbackResult = callback(element);
+    //If the callback condition hasn't been met, add element to the new array
     if (!callbackResult) {
       result.push(element);
+      //Quit when the callback condition has been met
     } else {
       return result;
     }
   }
   return result;
 };
+
+module.exports = takeUntil;
 
 // Tests
 const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
