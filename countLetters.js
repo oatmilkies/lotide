@@ -10,12 +10,15 @@ const assertEqual = function(actual, expected) {
 const countLetters = function(sentence) {
   const result = {};
   const alphabet = /[A-Za-z]/;
+
   //Check if input is a letter and add to the result object if it is
   for (const letter of sentence) {
     if (alphabet.test(letter)) {
       if (result[letter]) {
+        //Increment count for existing letters
         result[letter] += 1;
       } else {
+        //Add new letters with a count of 1
         result[letter] = 1;
       }
     }
@@ -23,6 +26,8 @@ const countLetters = function(sentence) {
 
   return result;
 };
+
+module.exports = countLetters;
 
 // Tests
 const test1 = countLetters("lighthouse in the house 5");
